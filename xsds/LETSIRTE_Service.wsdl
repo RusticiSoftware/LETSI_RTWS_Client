@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (c) 2009, LETSI, a program of the IEEE Industry Standards and
+Technology Organization, Inc. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are
+permitted provided that the following conditions are met:
+ * Redistributions of source code must retain the above copyright notice, this list of
+conditions and the following disclaimer.
+ * Redistributions in binary form must reproduce the above copyright notice, this list
+of conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
+ * Neither the name of LETSI nor the names of its contributors may be used to
+endorse or promote products derived from this software without specific prior
+written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
+CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES,
+INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT
+NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
+ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" 
+             xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" 
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+             xmlns:letsi="http://letsi.org/rte/1.0" 
+             xmlns:ieee="http://ltsc.ieee.org/xsd/1484_11_3" 
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+             xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+             xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" 
+             targetNamespace="http://letsi.org/rte/1.0">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified">
+		<xsd:import namespace="http://letsi.org/rte/1.0" schemaLocation="LETSIRTETypes.xsd"/>
+        <xsd:import namespace="http://ltsc.ieee.org/xsd/1484_11_3" schemaLocation="ieee_1484.11.3-2005.xsd"/>
+        <xsd:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" schemaLocation="oasis-200401-wss-wssecurity-secext-1.0-restricted.xsd" />
+        <xsd:import namespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" schemaLocation="oasis-200401-wss-wssecurity-utility-1.0.xsd" />
+    </xsd:schema>
+  </wsdl:types>
+
+  <message name="SecurityHeader">
+    <part name="Security" element="wsse:Security" />
+  </message>
+
+  <message name="SetRequest">
+		<part name="Message" element="letsi:Set" />
+  </message>
+  <message name ="SetResponse" >
+    <part name ="SetResponse" element="letsi:SetResponse" />
+  </message>
+
+  <message name ="GetRequest" >
+    <part name ="GetRequest" element="letsi:Get" />
+  </message>
+  <message name="GetResponse">
+    <part name="Message" element="letsi:GetResponse" />
+  </message>
+
+  <message name="GetAttemptRequest">
+    <part name="Message" element="letsi:GetAttempt" />
+  </message>
+  <message name="GetAttemptResponse">
+    <part name="Message" element="letsi:GetAttemptResponse" />
+  </message>
+
+  <message name="GetAttemptListRequest">
+    <part name="Message" element="letsi:GetAttemptList" />
+  </message>
+  <message name="GetAttemptListResponse">
+    <part name="Message" element="letsi:GetAttemptListResponse" />
+  </message>
+  
+	<portType name="LETSIRTE_PortType">
+		
+    <operation name="Set">
+			<input message="letsi:SetRequest" /> 
+      <output message="letsi:SetResponse"/>
+		</operation>
+
+    <operation name="Get">
+      <input message="letsi:GetRequest" />
+      <output message="letsi:GetResponse"/>
+    </operation>
+
+    <operation name="GetAttemptList">
+      <input message="letsi:GetAttemptListRequest" />
+      <output message="letsi:GetAttemptListResponse"/>
+    </operation>
+
+    <operation name="GetAttempt">
+      <input message="letsi:GetAttemptRequest" />
+      <output message="letsi:GetAttemptResponse"/>
+    </operation>
+  </portType>
+  
+	<binding name="LETSIRTE_Binding" type="letsi:LETSIRTE_PortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<operation name="Set">
+			<soap:operation soapAction="urn:Set" style="document"/>
+			<input>
+				<soap:body use="literal"/>
+                <soap:header message="letsi:SecurityHeader" part="Security" use="literal" />
+			</input>
+			<output>
+				<soap:body use="literal"/>
+			</output>
+		</operation>
+
+    <operation name="Get">
+      <soap:operation soapAction="urn:Get" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+        <soap:header message="letsi:SecurityHeader" part="Security" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+
+    <operation name="GetAttempt">
+      <soap:operation soapAction="urn:GetAttempt" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+        <soap:header message="letsi:SecurityHeader" part="Security" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+
+    <operation name="GetAttemptList">
+      <soap:operation soapAction="urn:GetAttemptList" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+        <soap:header message="letsi:SecurityHeader" part="Security" use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+
+  </binding>
+	<service name="LETSIRTE_Service">
+		<port name="SCORM" binding="letsi:LETSIRTE_Binding">
+			<soap:address location="http://localhost:8080/axis2/services/LETSIRTE_Service"/>
+		</port>
+	</service>
+</definitions>

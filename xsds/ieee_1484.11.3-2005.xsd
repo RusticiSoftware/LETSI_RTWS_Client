@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://ltsc.ieee.org/xsd/1484_11_3" xmlns:t="http://ltsc.ieee.org/xsd/1484_11_3" targetNamespace="http://ltsc.ieee.org/xsd/1484_11_3" elementFormDefault="qualified" version="1484.11.3-1.0">
+  <xs:annotation>
+    <xs:documentation xml:lang="en">
+      This schema is specified in IEEE 1484.11.3-2005, "IEEE Standard
+      for Learning Technology - Extensible Markup Language (XML)
+      Binding for Data Model for Content Object Communication."
+      This schema is a World Wide Web Consortium (W3C) Extensible
+      Markup Language (XML) binding of the data model defined in IEEE
+      1484.11.1-2004, "IEEE Standard for Learning Technology - Data
+      Model for Content Object Communication."
+      The purpose of this schema is to allow the creation of IEEE
+      1418.11.1-2004 data-model instances in XML. This schema uses the
+      W3C XML Schema definition language as the encoding. This allows
+      for interoperability and the exchange of data-model instances
+      between various systems.
+      This schema shall not be modified but may be included in
+      derivative works.
+
+      Copyright (c) 2005 Institute of Electrical and Electronics
+      Engineers, Inc.
+
+      USE AT YOUR OWN RISK
+
+      1/06/2010 - Editied for simplification by Mike Rustici. Lots of
+      changes to be tested and validated.
+    </xs:documentation>
+  </xs:annotation>
+  <!--  -->
+  <!-- The first half of this document follows the order of the
+       Data Model document clauses. -->
+  <!-- -->
+  <xs:element name="cocd" type="cocdType" />
+  <xs:complexType name="cocdType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements IEEE 1484.11.1-2004,
+        Clause 6.1: Content object communication
+      </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element ref="commentsFromLearner" minOccurs="0" />
+      <xs:element ref="commentsFromLMS" minOccurs="0" />
+      <xs:element ref="completionStatus" minOccurs="0" />
+      <xs:element ref="completionThreshold" minOccurs="0" />
+      <xs:element ref="credit" minOccurs="0" />
+      <xs:element ref="dataModelVersion" minOccurs="0" />
+      <xs:element ref="entry" minOccurs="0" />
+      <xs:element ref="exit" minOccurs="0" />
+      <xs:element ref="interactions" minOccurs="0" />
+      <xs:element ref="launchData" minOccurs="0" />
+      <xs:element ref="learnerId" minOccurs="0" />
+      <xs:element ref="learnerName" minOccurs="0" />
+      <xs:element ref="learnerPreferenceAudioLevel" minOccurs="0" />
+      <xs:element ref="learnerPreferenceLanguage" minOccurs="0" />
+      <xs:element ref="learnerPreferenceDeliverySpeed" minOccurs="0" />
+      <xs:element ref="learnerPreferenceAudioCaptioning" minOccurs="0" />
+      <xs:element ref="location" minOccurs="0" />
+      <xs:element ref="maxTimeAllowed" minOccurs="0" />
+      <xs:element ref="mode" minOccurs="0" />
+      <xs:element ref="objectives" minOccurs="0" />
+      <xs:element ref="progressMeasure" minOccurs="0" />
+      <xs:element ref="scaledPassingScore" minOccurs="0" />
+      <xs:element ref="scoreScaled" minOccurs="0" />
+      <xs:element ref="scoreRaw" minOccurs="0" />
+      <xs:element ref="scoreMin" minOccurs="0" />
+      <xs:element ref="scoreMax" minOccurs="0" />
+      <xs:element ref="sessionTime" minOccurs="0" />
+      <xs:element ref="successStatus" minOccurs="0" />
+      <xs:element ref="suspendData" minOccurs="0" />
+      <xs:element ref="timeLimitAction" minOccurs="0" />
+      <xs:element ref="totalTime" minOccurs="0" />
+      <xs:element ref="attemptNumber" minOccurs="0" />      
+    </xs:all>
+  </xs:complexType>
+  
+  <xs:element name="cmiDataModelElement">
+     <xs:complexType>
+    <xs:choice>
+      <xs:element ref="commentsFromLearner" minOccurs="0" />
+      <xs:element ref="commentsFromLMS" minOccurs="0" />
+      <xs:element ref="completionStatus" minOccurs="0" />
+      <xs:element ref="completionThreshold" minOccurs="0" />
+      <xs:element ref="credit" minOccurs="0" />
+      <xs:element ref="dataModelVersion" minOccurs="0" />
+      <xs:element ref="entry" minOccurs="0" />
+      <xs:element ref="exit" minOccurs="0" />
+      <xs:element ref="interactions" minOccurs="0" />
+      <xs:element ref="launchData" minOccurs="0" />
+      <xs:element ref="learnerId" minOccurs="0" />
+      <xs:element ref="learnerName" minOccurs="0" />
+      <xs:element ref="learnerPreferenceAudioLevel" minOccurs="0" />
+      <xs:element ref="learnerPreferenceLanguage" minOccurs="0" />
+      <xs:element ref="learnerPreferenceDeliverySpeed" minOccurs="0" />
+      <xs:element ref="learnerPreferenceAudioCaptioning" minOccurs="0" />
+      <xs:element ref="location" minOccurs="0" />
+      <xs:element ref="maxTimeAllowed" minOccurs="0" />
+      <xs:element ref="mode" minOccurs="0" />
+      <xs:element ref="objectives" minOccurs="0" />
+      <xs:element ref="progressMeasure" minOccurs="0" />
+      <xs:element ref="scaledPassingScore" minOccurs="0" />
+      <xs:element ref="scoreScaled" minOccurs="0" />
+      <xs:element ref="scoreRaw" minOccurs="0" />
+      <xs:element ref="scoreMin" minOccurs="0" />
+      <xs:element ref="scoreMax" minOccurs="0" />
+      <xs:element ref="sessionTime" minOccurs="0" />
+      <xs:element ref="successStatus" minOccurs="0" />
+      <xs:element ref="suspendData" minOccurs="0" />
+      <xs:element ref="timeLimitAction" minOccurs="0" />
+      <xs:element ref="totalTime" minOccurs="0" />
+    </xs:choice>
+     </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="commentsFromLearner">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.1:  Comments from learner
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="commentFromLearner" type="commentType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="commentsFromLMS">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.2: Comments from LMS
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="commentFromLMS" type="commentType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="completionStatus" type="completionStatusType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.3: Completion status
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="completionThreshold">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.4: Completion threshold
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0" />
+        <xs:maxInclusive value="1" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="credit">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.5: Credit
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="credit" />
+        <xs:enumeration value="no_credit" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="dataModelVersion" type="xs:string">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.6: Data model version
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="entry">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.7: Entry
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="ab_initio" />
+        <xs:enumeration value="resume" />
+        <xs:enumeration value="other" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="exit">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.8: Exit
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="logout" />
+        <xs:enumeration value="normal" />
+        <xs:enumeration value="suspend" />
+        <xs:enumeration value="timeout" />
+        <xs:enumeration value="" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="interactions" >
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.9: Interactions
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="interaction" type="interactionType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="launchData" type="xs:string">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.10: Launch data
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="learnerId" type="xs:anyURI">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.11: Learner ID
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="learnerName">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.12: Learner name
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="lang" type="xs:language" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="learnerPreferenceAudioLevel" nillable="true">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.13.1: Audio level
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="learnerPreferenceLanguage" type="xs:language">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.13.2: Language
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="learnerPreferenceDeliverySpeed" nillable="true">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.13.3: Delivery speed
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="learnerPreferenceAudioCaptioning">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.13.4: Audio captioning
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="off" />
+        <xs:enumeration value="no_change" />
+        <xs:enumeration value="on" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="location" type="xs:string">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.15: Location
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="maxTimeAllowed" type="xs:duration">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.16: Max time allowed
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="mode">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.17: Mode
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="browse" />
+        <xs:enumeration value="normal" />
+        <xs:enumeration value="review" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="objectives">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.18: Objectives
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="objective" type="objectiveType" minOccurs="0" maxOccurs="unbounded" />
+      </xs:sequence>
+    </xs:complexType>
+    <xs:unique name="uniqueInSetOfObjectives">
+      <xs:selector xpath="./t:objective" />
+      <xs:field xpath="t:identifier" />
+    </xs:unique>
+  </xs:element>
+  <xs:element name="progressMeasure" nillable="true">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.19: Progress measure
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="0" />
+        <xs:maxInclusive value="1" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="scaledPassingScore" nillable="true">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.21: Scaled passing score
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="-1" />
+        <xs:maxInclusive value="1" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="scoreScaled" nillable="true">
+    <xs:simpleType>
+      <xs:restriction base="xs:decimal">
+        <xs:minInclusive value="-1" />
+        <xs:maxInclusive value="1" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="scoreMax" type="xs:decimal" nillable="true" />
+  <xs:element name="scoreMin" type="xs:decimal" nillable="true" />
+  <xs:element name="scoreRaw" type="xs:decimal" nillable="true" />
+  <xs:element name="sessionTime" type="xs:duration">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.23: Session time
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="attemptNumber">
+    <xs:simpleType>
+      <xs:restriction base="xs:int">
+        <xs:minInclusive value="1"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="successStatus" type="successStatusType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.24: Success status
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="suspendData" type="xs:string">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.25: Suspend data
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="timeLimitAction">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.26: Time limit action
+      </xs:documentation>
+    </xs:annotation>
+    <xs:simpleType>
+      <xs:restriction base="xs:token">
+        <xs:enumeration value="continue_message" />
+        <xs:enumeration value="continue_no_message" />
+        <xs:enumeration value="exit_message" />
+        <xs:enumeration value="exit_no_message" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="totalTime" type="xs:duration">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.27: Total time
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <!--  -->
+  <!-- Global type declarations defined by numbered clauses in
+    IEEE 1484.11.1 -->
+  <!--  -->
+  <xs:complexType name="commentType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.2.1: Comment type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="comment">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="lang" type="xs:language" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="location" type="xs:string" minOccurs="0" />
+      <xs:element name="timeStamp" type="xs:dateTime" minOccurs="0" />
+      <xs:element name="identifier" type="xs:anyURI"/>
+    </xs:all>
+  </xs:complexType>
+  <xs:simpleType name="completionStatusType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.2.2: Completion status type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="completed" />
+      <xs:enumeration value="incomplete" />
+      <xs:enumeration value="not_attempted" />
+      <xs:enumeration value="unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="successStatusType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.2.10: Success status type
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:enumeration value="failed" />
+      <xs:enumeration value="passed" />
+      <xs:enumeration value="unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <!--  -->
+  <!-- Above this, things follow the order of the Data Model
+       document clauses. -->
+  <!-- ============================================================ -->
+  <!-- Below this are things that did not fit neatly above. They are
+       organized by their applicability, objectives first, then interactions.
+       Within interactions, they are further broken down by where they apply
+       then alphabetically by name within each of those categories.  -->
+  <!--  -->
+  <!-- === OBJECTIVES === -->
+  <!--  -->
+  <xs:complexType name="objectiveType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Reusable type to implement the objective_type record
+        defined in Clause 6.1.18
+      </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="identifier" type="xs:anyURI" />
+      <xs:element name="scoreScaled" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="-1" />
+            <xs:maxInclusive value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="scoreMax" type="xs:decimal" minOccurs="0" nillable="true" />
+      <xs:element name="scoreMin" type="xs:decimal" minOccurs="0" nillable="true" />
+      <xs:element name="scoreRaw" type="xs:decimal" minOccurs="0" nillable="true" />
+      <xs:element name="progressMeasure" minOccurs="0" nillable="true">
+        <xs:simpleType>
+          <xs:restriction base="xs:decimal">
+            <xs:minInclusive value="0" />
+            <xs:maxInclusive value="1" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="completionStatus" type="completionStatusType" minOccurs="0" />
+      <xs:element name="successStatus" type="successStatusType" minOccurs="0" />
+      <xs:element name="description" minOccurs="0">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="lang" type="xs:language" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+
+  <!--  -->
+  <!-- === INTERACTIONS === -->
+  <!-- Interaction Definition -->
+  <!--  -->
+  <xs:complexType name="interactionType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Reusable type to implements a single interaction record as
+        defined in Clause 6.1.9.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element name="identifier" type="xs:anyURI">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.1: ID
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="type" >
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.2: Type
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType>
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="true_false" />
+            <xs:enumeration value="multiple_choice" />
+            <xs:enumeration value="fill_in" />
+            <xs:enumeration value="long_fill_in" />
+            <xs:enumeration value="likert" />
+            <xs:enumeration value="matching" />
+            <xs:enumeration value="performance" />
+            <xs:enumeration value="sequencing" />
+            <xs:enumeration value="numeric" />
+            <xs:enumeration value="other" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="objectiveIds" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.3: Objectives ID
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="objectiveId" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="uniqueInObjectivesIds">
+          <xs:selector xpath="./t:objectiveId" />
+          <xs:field xpath="." />
+        </xs:unique>
+      </xs:element>
+      <xs:element name="timeStamp" type="xs:dateTime" minOccurs="0" nillable="true">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.4: Time stamp
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="correctResponses" type="correctResponsesType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.5: Correct responses
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="weighting" type="xs:decimal" minOccurs="0" nillable="true">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.6: Weighting
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="learnerResponse" type="learnerResponseType" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.7: Learner response
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="result" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.8: Result
+          </xs:documentation>
+        </xs:annotation>
+        <xs:simpleType >
+          <xs:restriction base="xs:token">
+            <xs:enumeration value="correct" />
+            <xs:enumeration value="incorrect" />
+            <xs:enumeration value="neutral" />
+            <xs:enumeration value="unanticipated" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="resultNumeric" type="xs:decimal" minOccurs="0" nillable="true"/>
+      <xs:element name="latency" type="xs:duration" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation xml:lang="en">
+            Implements Clause 6.1.9.9: Latency
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="description" minOccurs="0">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="lang" type="xs:language" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="attemptNumber" minOccurs="0" default="1">
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:minInclusive value="0" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+
+
+  <!-- Top Level Interaction Components -->
+  <xs:complexType name="correctResponsesType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.9.5: Correct responses.
+        Note: It is up to the implementation to choose the correct
+        group to match the interaction type. This correspondence cannot
+        be expressed or validated using XML Schema.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:group ref="grpCorrectResponseFillIn" />
+      <xs:group ref="grpCorrectResponseLikert" />
+      <xs:group ref="grpCorrectResponseLongFillIn" />
+      <xs:group ref="grpCorrectResponseMatching" />
+      <xs:group ref="grpCorrectResponseMultipleChoice" />
+      <xs:group ref="grpCorrectResponseNumeric" />
+      <xs:group ref="grpCorrectResponseOther" />
+      <xs:group ref="grpCorrectResponsePerformance" />
+      <xs:group ref="grpCorrectResponseSequencing" />
+      <xs:group ref="grpCorrectResponseTrueFalse" />
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="learnerResponseType">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        Implements Clause 6.1.9.7: Learner response.
+        Note: It is up to the implementation to choose the correct
+        group or element name to match the interaction type. This
+        correspondence cannot be expressed or validated using XML
+        Schema.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice>
+      <xs:group ref="grpLearnerResponseFillIn" />
+      <xs:group ref="grpLearnerResponseLikert" />
+      <xs:group ref="grpLearnerResponseLongFillIn" />
+      <xs:group ref="grpLearnerResponseMatching" />
+      <xs:group ref="grpLearnerResponseMultipleChoice" />
+      <xs:group ref="grpLearnerResponseNumeric" />
+      <xs:group ref="grpLearnerResponseOther" />
+      <xs:group ref="grpLearnerResponsePerformance" />
+      <xs:group ref="grpLearnerResponseSequencing" />
+      <xs:group ref="grpLearnerResponseTrueFalse" />
+    </xs:choice>
+  </xs:complexType>
+
+
+  <!-- Variant Groups for Correct Responses to Interactions -->
+  <xs:group name="grpCorrectResponseFillIn">
+    <xs:sequence>
+      <xs:element name="correctResponseFillIn" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="matchText" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:simpleContent>
+                  <xs:extension base="xs:string">
+                    <xs:attribute name="lang" type="xs:language" />
+                  </xs:extension>
+                </xs:simpleContent>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="caseMatters" type="xs:boolean" use="optional" default="false" />
+          <xs:attribute name="orderMatters" type="xs:boolean" use="optional" default="true" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponseLikert">
+    <xs:sequence>
+      <xs:element name="correctResponseLikert" type="xs:anyURI" minOccurs="0" />
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponseLongFillIn">
+    <xs:sequence>
+      <xs:element name="correctResponseLongFillIn" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="lang" type="xs:language" />
+              <xs:attribute name="caseMatters" type="xs:boolean" use="optional" default="false" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponseMatching">
+    <xs:sequence>
+      <xs:element name="correctResponseMatching"  maxOccurs="unbounded" >
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="match" minOccurs="0" maxOccurs="unbounded" >
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="source" type="xs:anyURI" />
+                  <xs:element name="target" type="xs:anyURI" />
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponseMultipleChoice">
+    <xs:sequence>
+      <xs:element name="correctResponseMultipleChoice" minOccurs="0" maxOccurs="unbounded" >
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Set of short identifiers for interaction type "multiple choice"
+              as specified in 6.1.9.5: Correct response and 6.1.9.7: Learner
+              response.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="choice" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="uniqueCorrectResponseMultipleChoice">
+          <xs:selector xpath="./t:choice" />
+          <xs:field xpath="." />
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponseNumeric" >
+    <xs:sequence>
+      <xs:element name="correctResponseNumeric" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="min" type="xs:decimal" minOccurs="0" />
+            <xs:element name="max" type="xs:decimal" minOccurs="0" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponseOther">
+    <xs:sequence>
+      <xs:element name="correctResponseOther" type="xs:string" />
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponsePerformance">
+    <xs:sequence>
+      <xs:element name="correctResponsePerformance" maxOccurs="unbounded">
+        <xs:complexType >
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              A correct response record (order_matters + answers)
+              For interaction type "performance"
+              as specified in 6.1.9.5: Correct response
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="step" minOccurs="0" maxOccurs="unbounded">
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="stepName" type="xs:anyURI" minOccurs="0" />
+                  <xs:element name="stepAnswer" minOccurs="0">
+                    <xs:complexType>
+                      <xs:choice>
+                        <xs:element name="literal" type="xs:string" minOccurs="0" />
+                        <xs:element name="numeric" minOccurs="0">
+                          <xs:complexType>
+                            <xs:attribute name="min" type="xs:decimal" />
+                            <xs:attribute name="max" type="xs:decimal" />
+                          </xs:complexType>
+                        </xs:element>
+                      </xs:choice>
+                    </xs:complexType>
+                  </xs:element>
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+          <xs:attribute name="orderMatters" type="xs:boolean" use="optional" default="true" />
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponseSequencing">
+    <xs:sequence>
+      <xs:element name="correctResponseSequencing" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              A sequence of steps for interaction type "sequencing"
+              as specified in 6.1.9.5: Correct response and 6.1.9.7:
+              Learner response.
+              The same identifier may appear more than once in the list,
+              because a step may be repeated in an interaction.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="step" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpCorrectResponseTrueFalse">
+    <xs:sequence>
+      <xs:element name="correctResponseTrueFalse" type="xs:boolean" />
+    </xs:sequence>
+  </xs:group>
+
+  <!-- Variant Groups for Learner Responses to Interactions -->
+  <xs:group name="grpLearnerResponseFillIn">
+    <xs:sequence>
+      <xs:element name="learnerResponseFillIn" minOccurs="0" maxOccurs="unbounded">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="lang" type="xs:language" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponseLikert">
+    <xs:sequence>
+      <xs:element name="learnerResponseLikert" type="xs:anyURI" minOccurs="0" />
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponseLongFillIn">
+    <xs:sequence>
+      <xs:element name="learnerResponseLongFillIn" minOccurs="0">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="lang" type="xs:language" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponseMatching">
+    <xs:sequence>
+      <xs:element name="learnerResponseMatching"  >
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="match" minOccurs="0" maxOccurs="unbounded" >
+              <xs:complexType>
+                <xs:all>
+                  <xs:element name="source" type="xs:anyURI" />
+                  <xs:element name="target" type="xs:anyURI" />
+                </xs:all>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponseMultipleChoice">
+    <xs:sequence>
+      <xs:element name="learnerResponseMultipleChoice" >
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              Set of short identifiers for interaction type "multiple choice"
+              as specified in 6.1.9.5: Correct response and 6.1.9.7: Learner
+              response.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="choice" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+        <xs:unique name="uniqueLearnerResponseMultipleChoice">
+          <xs:selector xpath="./t:choice" />
+          <xs:field xpath="." />
+        </xs:unique>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponseNumeric">
+    <xs:sequence>
+      <xs:element name="learnerResponseNumeric" type="xs:decimal" minOccurs="0" />
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponseOther">
+    <xs:sequence>
+      <xs:element name="learnerResponseOther" type="xs:string" />
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponsePerformance">
+    <xs:annotation>
+      <xs:documentation xml:lang="en">
+        The learner response for interaction type "performance"
+        as specified in 6.1.9.7: Learner response
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="learnerResponsePerformance" minOccurs="0" maxOccurs="unbounded" >
+        <xs:complexType>
+          <xs:all>
+            <xs:element name="stepName" type="xs:anyURI" minOccurs="0" />
+            <xs:element name="stepAnswer" minOccurs="0">
+              <xs:complexType>
+                <xs:choice>
+                  <xs:element name="literal" type="xs:string" minOccurs="0" />
+                  <xs:element name="numeric" type="xs:decimal" minOccurs="0" />
+                </xs:choice>
+              </xs:complexType>
+            </xs:element>
+          </xs:all>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponseSequencing">
+    <xs:sequence>
+      <xs:element name="learnerResponseSequencing" minOccurs="0">
+        <xs:complexType>
+          <xs:annotation>
+            <xs:documentation xml:lang="en">
+              A sequence of steps for interaction type "sequencing"
+              as specified in 6.1.9.5: Correct response and 6.1.9.7:
+              Learner response.
+              The same identifier may appear more than once in the list,
+              because a step may be repeated in an interaction.
+            </xs:documentation>
+          </xs:annotation>
+          <xs:sequence>
+            <xs:element name="step" type="xs:anyURI" minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:group>
+  <xs:group name="grpLearnerResponseTrueFalse">
+    <xs:sequence>
+      <xs:element name="learnerResponseTrueFalse" type="xs:boolean" minOccurs="0" />
+    </xs:sequence>
+  </xs:group>
+
+</xs:schema>

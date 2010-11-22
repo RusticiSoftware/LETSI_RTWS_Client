@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema id="RTWSMConfiguration" targetNamespace="http://letsi.org/RTWSMConfiguration"
+                  elementFormDefault="qualified"
+                  xmlns="http://letsi.org/RTWSMConfiguration"
+                  xmlns:mstns="http://letsi.org/RTWSMConfiguration.xsd"
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="RTWSMConfiguration">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="communicationVersion" type="xs:token" />
+      </xs:all>
+      <xs:attribute name="secret">
+        <xs:simpleType>
+          <xs:restriction base="xs:token"/>
+        </xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
