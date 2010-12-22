@@ -72,6 +72,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="wse3policyCache.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="xsds\ieee_1484.11.3-2005.xsd">
       <SubType>Designer</SubType>
     </None>
