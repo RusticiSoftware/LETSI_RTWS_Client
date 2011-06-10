@@ -139,10 +139,9 @@ namespace Rustici.LETSI.rtws.client
 
         private T GetItem<T>(string id, bool createIfNotFound,ref T[] list) where T : class,IIdentified,new()
         {
-			if (list == null)
-			{
-				list = new T[0];
-			}
+            if (list == null) {
+                list = new T[0];
+            }
 
             foreach (T itm in list)
             {

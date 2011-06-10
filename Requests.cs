@@ -10,6 +10,7 @@ using System.Web.Services.Protocols;
 using System.IO;
 using System.Xml;
 using System.Net;
+using System.Threading;
 
 namespace LETSI_WS_Stub_Client
 {
@@ -206,8 +207,8 @@ namespace LETSI_WS_Stub_Client
         {
             LETSIRTE_Service client = getClient();
 
-            string obj1ID = "test obj 1";
-            string obj2ID = "TeSt obj 1";
+            string obj1ID = "test_obj_1";
+            string obj2ID = "TeSt_obj_1";
 
             cocdType cocd = client.Get();
             objectiveType obj = cocd.GetObjective(obj1ID, true);
@@ -258,7 +259,7 @@ namespace LETSI_WS_Stub_Client
         {
             LETSIRTE_Service client = getClient();
 
-            string int1ID = "test interaction 1";
+            string int1ID = "test_interaction_1";
 
             cocdType cocd = client.Get();
             interactionType int1 = cocd.GetInteraction(int1ID,true);
@@ -299,6 +300,8 @@ namespace LETSI_WS_Stub_Client
             Assert.AreEqual(((correctResponsesTypeCorrectResponseFillIn) int1.correctResponses.Items[0]).matchText[0].Value, "answer 42");
             learnerResponseTypeLearnerResponseFillIn lr = (learnerResponseTypeLearnerResponseFillIn) int1.learnerResponse.Items[0];
 
+            Thread.Sleep(1000);
+
             Assert.AreEqual(lr.Value.ToLower(), "answer 1");
             Assert.AreEqual(interactionTypeResult.correct, int1.result);
             Assert.IsTrue(int1.resultSpecified);
@@ -335,7 +338,7 @@ namespace LETSI_WS_Stub_Client
         {
             LETSIRTE_Service client = getClient();
 
-            string int2ID = "Performance interaction upd";
+            string int2ID = "Performance_interaction_upd";
 
             cocdType cocd = client.Get();
             interactionType perf = cocd.GetInteraction(int2ID, true);
@@ -347,12 +350,12 @@ namespace LETSI_WS_Stub_Client
             perf.correctResponses.Items = new object[] { rsp, rsp2 };
 
             rsp.step = new correctResponsesTypeCorrectResponsePerformanceStep[] {
-                new correctResponsesTypeCorrectResponsePerformanceStep("step 1", "answer 1"),
-                new correctResponsesTypeCorrectResponsePerformanceStep("step 2 min 42",42M,null)
+                new correctResponsesTypeCorrectResponsePerformanceStep("step_1", "answer 1"),
+                new correctResponsesTypeCorrectResponsePerformanceStep("step_2_min_42",42M,null)
                 };
             rsp2.step = new correctResponsesTypeCorrectResponsePerformanceStep[] {
-                new correctResponsesTypeCorrectResponsePerformanceStep("step 1 max 100", null,100M),
-                new correctResponsesTypeCorrectResponsePerformanceStep("step 2 minmax no limit",null,null)
+                new correctResponsesTypeCorrectResponsePerformanceStep("step_1_max_100", null,100M),
+                new correctResponsesTypeCorrectResponsePerformanceStep("step_2_minmax_no_limit",null,null)
                 };
 
             perf.description = new interactionTypeDescription();
@@ -362,11 +365,11 @@ namespace LETSI_WS_Stub_Client
             learnerResponseTypeLearnerResponsePerformance lrsp = new learnerResponseTypeLearnerResponsePerformance();
             learnerResponseTypeLearnerResponsePerformance lrsp2 = new learnerResponseTypeLearnerResponsePerformance();
             perf.learnerResponse.Items = new object[] { lrsp, lrsp2 };
-            lrsp.stepName = "step 1";
+            lrsp.stepName = "step_1";
             lrsp.stepAnswer = new learnerResponseTypeLearnerResponsePerformanceStepAnswer();
             lrsp.stepAnswer.Item = "answer 1";
 
-            lrsp2.stepName = "step 2 min 42";
+            lrsp2.stepName = "step_2_min_42";
             lrsp2.stepAnswer = new learnerResponseTypeLearnerResponsePerformanceStepAnswer();
             lrsp2.stepAnswer.Item = 23M; // WRONG!
 
@@ -388,7 +391,7 @@ namespace LETSI_WS_Stub_Client
         {
             LETSIRTE_Service client = getClient();
 
-            string intFillInID = "Long FillIn";
+            string intFillInID = "Long_FillIn";
 
             cocdType cocd = client.Get();
             interactionType inter = cocd.GetInteraction(intFillInID, true);
@@ -600,14 +603,14 @@ namespace LETSI_WS_Stub_Client
             Assert.AreEqual(2, rsp.learnerResponse.Items.Length, "learner response count");
 
             Assert.AreEqual("answer 1", lResponses[0].stepAnswer.Item.ToString(), "learner response 1 step 1 answer");
-            Assert.AreEqual("step 1", lResponses[0].stepName, "learner response 1 step 1 name");
+            Assert.AreEqual("step_1", lResponses[0].stepName, "learner response 1 step 1 name");
             Assert.AreEqual("23", lResponses[1].stepAnswer.Item.ToString(), "learner response 2 step 1 answer");
-            Assert.AreEqual("step 2 min 42", lResponses[1].stepName, "learner response 2 step 1 name");
+            Assert.AreEqual("step_2_min_42", lResponses[1].stepName, "learner response 2 step 1 name");
 
-            perfValidateStep(responses[0].step[1], "step 2 min 42", 42M, null, "response 1 step 1");
-            perfValidateStep(responses[0].step[0], "step 1", "answer 1", "response 1 step 1");
-            perfValidateStep(responses[1].step[0], "step 1 max 100", null, 100M, "response 2 step 1");
-            perfValidateStep(responses[1].step[1], "step 2 minmax no limit", null, null, "response 2 step 2");
+            perfValidateStep(responses[0].step[1], "step_2_min_42", 42M, null, "response 1 step 1");
+            perfValidateStep(responses[0].step[0], "step_1", "answer 1", "response 1 step 1");
+            perfValidateStep(responses[1].step[0], "step_1_max_100", null, 100M, "response 2 step 1");
+            perfValidateStep(responses[1].step[1], "step_2_minmax_no_limit", null, null, "response 2 step 2");
         }
         private void perfValidateStep(correctResponsesTypeCorrectResponsePerformanceStep step, string name , string answer, string msg)
         {
@@ -645,7 +648,7 @@ namespace LETSI_WS_Stub_Client
 
             cocd.commentsFromLearner[0].timeStamp = DateTime.Now;
             cocd.commentsFromLearner[0].location = "right here";
-            cocd.commentsFromLearner[0].identifier = "not yet implemented";
+            cocd.commentsFromLearner[0].identifier = "comment1";
             cocd.commentsFromLearner[0].comment = new commentTypeComment();
             cocd.commentsFromLearner[0].comment.Value = "new comment";
 
