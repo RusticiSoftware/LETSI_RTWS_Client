@@ -1,9 +1,11 @@
 This is the Rustici Software test client for LETSI RTWS.
 
-NOTE:  The tests now close the registration - so you will need to create a new registration, or clear your registration (that's your registration that you created) before each test run.  The placeto do that is here:
+What you'll find here is a precompiled .NET client library for RTWS, a small set of unit tests which use the library,
+the schema files you'll need to create libraries in other languages, and finally a couple scripts to generate the library
+from those schema files in both .NET and Java.
 
-http://dev1.rusticisoftware.com/ScormEngineWS/NoddyLms/NoddyLms.aspx?
+NOTE:  The tests now close the registration - so you will need to create a new registration, or clear your registration (that's your registration that you created) before each test run.
 
-The current set of tests are designed to exercise the multiple attempt feature.  The old test client won't work well, as it will create new attempts but is not expecting them -- if you want to run the old tests and are familiar with NUnit, you can load this .exe as an NUnit project and run the "Requests" set of tests.
+The current set of tests are designed to exercise the multiple attempt feature.
 
 The values for Registration, Secret, and URL are read from here:  bin\LETSI_WS_Stub_Client.exe.config
