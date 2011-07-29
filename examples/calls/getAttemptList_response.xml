@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>urn:GetAttemptListResponse</wsa:Action>
+    <wsa:MessageID>urn:uuid:cb754db8-4622-4072-8791-2ca2832b4652</wsa:MessageID>
+    <wsa:RelatesTo>urn:uuid:bfa7e68e-02c8-4c85-9400-65110c1fb28a</wsa:RelatesTo>
+    <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+    <wsse:Security>
+      <wsu:Timestamp wsu:Id="Timestamp-1b649981-4d5a-442e-b295-ba5f4e13b871">
+        <wsu:Created>2010-07-10T19:42:49Z</wsu:Created>
+        <wsu:Expires>2010-07-10T19:47:49Z</wsu:Expires>
+      </wsu:Timestamp>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <GetAttemptListResponse xmlns="http://letsi.org/rte/1.0">
+      <attemptSummary>
+        <attemptNumber xmlns="http://ltsc.ieee.org/xsd/1484_11_3">1</attemptNumber>
+        <entry xmlns="http://ltsc.ieee.org/xsd/1484_11_3">other</entry>
+        <completionStatus xmlns="http://ltsc.ieee.org/xsd/1484_11_3">unknown</completionStatus>
+        <progressMeasure xsi:nil="true" xmlns="http://ltsc.ieee.org/xsd/1484_11_3" />
+        <scoreScaled xsi:nil="true" xmlns="http://ltsc.ieee.org/xsd/1484_11_3" />
+        <successStatus xmlns="http://ltsc.ieee.org/xsd/1484_11_3">unknown</successStatus>
+      </attemptSummary>
+      <attemptSummary>
+        <attemptNumber xmlns="http://ltsc.ieee.org/xsd/1484_11_3">2</attemptNumber>
+        <entry xmlns="http://ltsc.ieee.org/xsd/1484_11_3">ab_initio</entry>
+        <completionStatus xmlns="http://ltsc.ieee.org/xsd/1484_11_3">unknown</completionStatus>
+        <progressMeasure xsi:nil="true" xmlns="http://ltsc.ieee.org/xsd/1484_11_3" />
+        <scoreScaled xsi:nil="true" xmlns="http://ltsc.ieee.org/xsd/1484_11_3" />
+        <successStatus xmlns="http://ltsc.ieee.org/xsd/1484_11_3">unknown</successStatus>
+      </attemptSummary>
+    </GetAttemptListResponse>
+  </soap:Body>
+</soap:Envelope>

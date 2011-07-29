@@ -1,0 +1,24 @@
+      <soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <soap:Header>
+          <wsa:Action>http://schemas.xmlsoap.org/ws/2004/08/addressing/fault</wsa:Action>
+          <wsa:MessageID>urn:uuid:1b188f30-9835-4866-8264-3456f319a880</wsa:MessageID>
+          <wsa:RelatesTo>urn:uuid:53a2c9bb-c690-4177-9c2b-df61943bdcf5</wsa:RelatesTo>
+          <wsa:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:To>
+          <wsse:Security>
+            <wsu:Timestamp wsu:Id="Timestamp-94b59489-4fbe-4692-94fa-315352ae4a8b">
+              <wsu:Created>2010-06-08T18:30:00Z</wsu:Created>
+              <wsu:Expires>2010-06-08T18:35:00Z</wsu:Expires>
+            </wsu:Timestamp>
+          </wsse:Security>
+        </soap:Header>
+        <soap:Body>
+          <soap:Fault>
+            <faultcode xmlns:q0="http://letsi.org/rte/1.0">q0:ReadonlySession</faultcode>
+            <faultstring>System.Web.Services.Protocols.SoapException: The session is over, set is not allowed.
+   at Rustici.LETSI.LETSI_RTWS.ValidateSet(cocdType cmi, Registration reg, Activity activity, String sessionId)
+   at Rustici.LETSI.LETSI_RTWS.Set(cocdType cocd, String sessionid)
+   at Rustici.LETSI.LETSI_RTWS.Set(cocdType cocd)</faultstring>
+            <detail />
+          </soap:Fault>
+        </soap:Body>
+      </soap:Envelope>

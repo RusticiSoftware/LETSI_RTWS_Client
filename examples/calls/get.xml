@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>urn:Get</wsa:Action>
+    <wsa:MessageID>urn:uuid:9dc85241-d1d6-4d0b-b5bd-56d5daf17eff</wsa:MessageID>
+    <wsa:ReplyTo>
+      <wsa:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:Address>
+    </wsa:ReplyTo>
+    <wsa:To>http://dev1.rusticisoftware.com/ScormEngineWS/ws/RTWS/LETSI_RTWS.asmx</wsa:To>
+    <wsse:Security soap:mustUnderstand="1">
+      <wsu:Timestamp wsu:Id="Timestamp-d43ffd06-6127-4315-bfb4-0e9628c4f7b5">
+        <wsu:Created>2010-07-10T19:42:49Z</wsu:Created>
+        <wsu:Expires>2010-07-10T19:47:49Z</wsu:Expires>
+      </wsu:Timestamp>
+      <wsse:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SecurityToken-3eebc06b-bb57-4474-b9d0-d73092c5ac94">
+        <wsse:Username>UserName|Ben!CourseId|1001!InstanceId|0</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">c5+dbL322nxO1SwandhghidKmRY=</wsse:Password>
+        <wsse:Nonce>mXoMr9MRswbYDw8y1zf9uA==</wsse:Nonce>
+        <wsu:Created>2010-07-10T19:42:49Z</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <Get xmlns="http://letsi.org/rte/1.0" />
+  </soap:Body>
+</soap:Envelope>

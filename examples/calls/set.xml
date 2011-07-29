@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+  <soap:Header>
+    <wsa:Action>urn:Set</wsa:Action>
+    <wsa:MessageID>urn:uuid:4a01d07e-a137-4f36-a631-a33f09c1b151</wsa:MessageID>
+    <wsa:ReplyTo>
+      <wsa:Address>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:Address>
+    </wsa:ReplyTo>
+    <wsa:To>http://dev1.rusticisoftware.com/ScormEngineWS/ws/RTWS/LETSI_RTWS.asmx</wsa:To>
+    <wsse:Security soap:mustUnderstand="1">
+      <wsu:Timestamp wsu:Id="Timestamp-89b5f35b-e092-4c6a-a9ba-5566c8d4ddf8">
+        <wsu:Created>2010-07-10T19:42:51Z</wsu:Created>
+        <wsu:Expires>2010-07-10T19:47:51Z</wsu:Expires>
+      </wsu:Timestamp>
+      <wsse:UsernameToken xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="SecurityToken-3eebc06b-bb57-4474-b9d0-d73092c5ac94">
+        <wsse:Username>UserName|Ben!CourseId|1001!InstanceId|0</wsse:Username>
+        <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">ZZgofSaH0Jd3jw7snKMohbOIuOg=</wsse:Password>
+        <wsse:Nonce>eqJN9460Zxm9xdusi8zxhA==</wsse:Nonce>
+        <wsu:Created>2010-07-10T19:42:51Z</wsu:Created>
+      </wsse:UsernameToken>
+    </wsse:Security>
+  </soap:Header>
+  <soap:Body>
+    <Set xmlns="http://letsi.org/rte/1.0">
+      <cocd xmlns="http://ltsc.ieee.org/xsd/1484_11_3">
+        <commentsFromLearner />
+        <commentsFromLMS />
+        <completionStatus>unknown</completionStatus>
+        <dataModelVersion>1.0</dataModelVersion>
+        <entry>resume</entry>
+        <interactions>
+          <interaction>
+            <identifier>FillIn</identifier>
+            <type>fill_in</type>
+            <objectiveIds />
+            <correctResponses>
+              <correctResponseFillIn>
+                <matchText>answer 1</matchText>
+                <matchText>answer 1.1</matchText>
+              </correctResponseFillIn>
+              <correctResponseFillIn>
+                <matchText>answer 2</matchText>
+              </correctResponseFillIn>
+            </correctResponses>
+            <learnerResponse>
+              <learnerResponseFillIn>answer 1</learnerResponseFillIn>
+              <learnerResponseFillIn>answer 1.1</learnerResponseFillIn>
+            </learnerResponse>
+            <result>correct</result>
+            <latency />
+            <description lang="" />
+          </interaction>
+          <interaction>
+            <identifier>Long FillIn</identifier>
+            <type>long_fill_in</type>
+            <objectiveIds />
+            <correctResponses>
+              <correctResponseLongFillIn>answer 1</correctResponseLongFillIn>
+              <correctResponseLongFillIn>answer 2</correctResponseLongFillIn>
+            </correctResponses>
+            <learnerResponse>
+              <learnerResponseLongFillIn>answer 2</learnerResponseLongFillIn>
+            </learnerResponse>
+            <result>correct</result>
+            <latency />
+            <description lang="" />
+          </interaction>
+          <interaction>
+            <identifier>Performance interaction upd</identifier>
+            <type>performance</type>
+            <objectiveIds />
+            <correctResponses>
+              <correctResponsePerformance>
+                <step>
+                  <stepName>step 1</stepName>
+                  <stepAnswer>
+                    <literal>answer 1</literal>
+                  </stepAnswer>
+                </step>
+                <step>
+                  <stepName>step 2 min 42</stepName>
+                  <stepAnswer>
+                    <numeric min="42" />
+                  </stepAnswer>
+                </step>
+              </correctResponsePerformance>
+              <correctResponsePerformance>
+                <step>
+                  <stepName>step 1 max 100</stepName>
+                  <stepAnswer>
+                    <numeric max="100" />
+                  </stepAnswer>
+                </step>
+                <step>
+                  <stepName>step 2 minmax no limit</stepName>
+                  <stepAnswer>
+                    <numeric />
+                  </stepAnswer>
+                </step>
+              </correctResponsePerformance>
+            </correctResponses>
+            <learnerResponse>
+              <learnerResponsePerformance>
+                <stepName>step 1</stepName>
+                <stepAnswer>
+                  <literal>answer 1</literal>
+                </stepAnswer>
+              </learnerResponsePerformance>
+              <learnerResponsePerformance>
+                <stepName>step 2 min 42</stepName>
+                <stepAnswer>
+                  <numeric>23</numeric>
+                </stepAnswer>
+              </learnerResponsePerformance>
+            </learnerResponse>
+            <result>incorrect</result>
+            <latency />
+            <description lang="" />
+          </interaction>
+          <interaction>
+            <identifier>Sequencing</identifier>
+            <type>sequencing</type>
+            <objectiveIds />
+            <correctResponses>
+              <correctResponseSequencing>
+                <step>1</step>
+                <step>2</step>
+                <step>3</step>
+                <step>4</step>
+              </correctResponseSequencing>
+              <correctResponseSequencing>
+                <step>A</step>
+                <step>B</step>
+                <step>C</step>
+              </correctResponseSequencing>
+            </correctResponses>
+            <learnerResponse>
+              <learnerResponseSequencing>
+                <step>A</step>
+                <step>B</step>
+                <step>C</step>
+              </learnerResponseSequencing>
+            </learnerResponse>
+            <result>correct</result>
+            <latency />
+            <description lang="" />
+          </interaction>
+          <interaction>
+            <identifier>test interaction 1</identifier>
+            <type>fill_in</type>
+            <objectiveIds>
+              <objectiveId>id1</objectiveId>
+              <objectiveId>id2</objectiveId>
+            </objectiveIds>
+            <timeStamp>2010-07-10T19:42:48</timeStamp>
+            <correctResponses>
+              <correctResponseFillIn>
+                <matchText>answer 42</matchText>
+                <matchText>answer 2</matchText>
+              </correctResponseFillIn>
+            </correctResponses>
+            <learnerResponse>
+              <learnerResponseFillIn>ANSWER 1</learnerResponseFillIn>
+            </learnerResponse>
+            <result>correct</result>
+            <latency />
+            <description lang="" />
+          </interaction>
+        </interactions>
+        <launchData />
+        <learnerId>bben</learnerId>
+        <learnerName lang="">Ben, Ben</learnerName>
+        <learnerPreferenceAudioLevel>1</learnerPreferenceAudioLevel>
+        <learnerPreferenceLanguage />
+        <learnerPreferenceDeliverySpeed>1</learnerPreferenceDeliverySpeed>
+        <learnerPreferenceAudioCaptioning>no_change</learnerPreferenceAudioCaptioning>
+        <maxTimeAllowed />
+        <mode>normal</mode>
+        <objectives />
+        <successStatus>unknown</successStatus>
+        <suspendData />
+      </cocd>
+    </Set>
+  </soap:Body>
+</soap:Envelope>
